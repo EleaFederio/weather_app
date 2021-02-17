@@ -1,5 +1,6 @@
 import React from 'react';
-import { View, Text, StyleSheet, Image } from 'react-native';
+import { View, Text, StyleSheet } from 'react-native';
+import { Image } from 'react-native-elements';
 import {colors} from '../utils/index'
 
 const {PRIMARY_COLOR, SECONDARY_COLOR, BORDER_COLOR} = colors;
@@ -17,7 +18,10 @@ export default function WeatherInfo({ currentWeather }) {
     return (
         <View style={styles.weatherInfo}>
             <Text>{name}</Text>
-            <Image style={styles.weatherIcon} source={{uri: iconUrl}} />
+            <Image 
+                style={styles.weatherIcon} 
+                source={{ uri: iconUrl }} 
+            />
             <Text style={styles.textPrimary}>{temp}°</Text>
             <Text style={styles.weatherDescription}>{description}</Text>
             <Text style={styles.textSecondary}>{main}</Text>
@@ -35,7 +39,7 @@ const styles = StyleSheet.create({
     weatherIcon: {
         width: 100,
         height: 100,
-        flex: 1
+        // flex: 1
     },
     textPrimary:{
         fontSize: 40,
